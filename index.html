@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Video</title>
+    <title>Klicke hier für mehr Infos</title>
     <style>
-        body { margin: 0; padding: 0; background: #000; }
-        iframe { width: 100vw; height: 100vh; border: none; }
+        body { margin: 0; padding: 0; background: #000; overflow: hidden; }
+        #overlay {
+            position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
+            display: flex; justify-content: center; align-items: center;
+            color: white; font-family: sans-serif; cursor: pointer; z-index: 10;
+        }
+        iframe { width: 100vw; height: 100vh; border: none; pointer-events: none; }
     </style>
 </head>
-<body>
+<body onclick="startVideo()">
 
-    <iframe 
+    <div id="overlay"><h1>Klicke hier um fortzufahren...</h1></div>
+
+    <iframe id="video" 
         src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ" 
         allow="autoplay" 
         allowfullscreen>
     </iframe>
 
+    <script>
+        function startVideo() {
+            var video = document.getElementById('video');
+            // Hier entfernen wir den 'mute'-Parameter durch ein erneutes Laden des Frames ohne mute
+            video.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=0&loop=1&playlist=dQw4w9WgXcQ";
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
