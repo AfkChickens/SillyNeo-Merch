@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video Embed</title>
+    <title>Video Autoplay</title>
     <style>
         body {
             display: flex;
@@ -11,15 +11,17 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #111;
+            background-color: #000;
         }
-        iframe {
-            border: none;
+        video {
             max-width: 100%;
+            max-height: 100vh;
         }
     </style>
 </head>
 <body>
-    <iframe width="854" height="480" src="https://www.youtube.com/embed/fBuFyqVqbeA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <video src="movie.mp4" autoplay muted controls playsinline></video>
+
 </body>
 </html>
