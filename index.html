@@ -1,34 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
 <head>
-    <title>Klicke hier für mehr Infos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Embed</title>
     <style>
-        body { margin: 0; padding: 0; background: #000; overflow: hidden; }
-        #overlay {
-            position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;
-            display: flex; justify-content: center; align-items: center;
-            color: white; font-family: sans-serif; cursor: pointer; z-index: 10;
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #111;
         }
-        iframe { width: 100vw; height: 100vh; border: none; pointer-events: none; }
+        iframe {
+            border: none;
+            max-width: 100%;
+        }
     </style>
 </head>
-<body onclick="startVideo()">
-
-    <div id="overlay"><h1>Klicke hier um fortzufahren...</h1></div>
-
-    <iframe id="video" 
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ" 
-        allow="autoplay" 
-        allowfullscreen>
-    </iframe>
-
-    <script>
-        function startVideo() {
-            var video = document.getElementById('video');
-            // Hier entfernen wir den 'mute'-Parameter durch ein erneutes Laden des Frames ohne mute
-            video.src = "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=0&loop=1&playlist=dQw4w9WgXcQ";
-            document.getElementById('overlay').style.display = 'none';
-        }
-    </script>
+<body>
+    <iframe width="854" height="480" src="https://www.youtube.com/embed/fBuFyqVqbeA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </body>
 </html>
